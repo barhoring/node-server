@@ -7,37 +7,18 @@
 // create a web server
 
 const http = require('http');
+var router = require("./router.js")
 
 const hostname = '127.0.0.1';
 const port = 1337;
 
+
+
 const server = http.createServer((request, response) => {
-    response.statusCode = 200;
-    response.setHeader('Content-Type', 'text/plain');
-    setInterval(function() {
-        response.write(new Date() + "\n");
-    }, 1000);
-    //response.end('Hello Bar\n');
+    router.home(request, response);
+    router.user(request, response);
 });
 
 server.listen(port, hostname, () => {
-  console.log(`Server running at http://${hostname}:${port}/`);
+    console.log(`Server running at http://${hostname}:${port}/`);
 });
-
-
-// handle the http route GET / and POST /
-    // if GET && url == '/' return show search
-    // elseif POST $$ url == '/' redirect to /:{username}
-
-// handle http route for GET /:{username}
-    // if url == '/...'
-        // get json from treehouse
-        // on the end 
-            // show the profile
-        // on error 
-            // show error
-
-// function that handles reading of files and merge in value
-    // read from file and get a string
-    // merge values into strings
- 
