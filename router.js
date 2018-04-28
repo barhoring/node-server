@@ -24,7 +24,7 @@ function user(request, response) {
         student_profile.on("end", function(profileJSON){
             var values = {
                 avatarUrl: profileJSON.gravatar_url,
-                username: profileJSON.profile_name,
+                //username: profileJSON.profile_name,
                 badges: profileJSON.badges.length,
                 javascript: profileJSON.points.JavaScript,
             }
