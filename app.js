@@ -15,6 +15,7 @@ const port = 1337;
 
 
 const server = http.createServer((request, response) => {
+    router.style(request, response);
     router.home(request, response);
     router.user(request, response);
 });
